@@ -1,0 +1,30 @@
+.p {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #9cc813;
+    background-image: linear-gradient(to right, transparent 50%, #588fbf 0);
+    animation: spin 5s ease infinite;
+}
+  
+.p::before {
+    content: '';
+    display: block;
+    margin-left: 50%;
+    height: 100%;
+    border-radius: 0 100% 100% 0 / 50%;
+    background-color: inherit;
+    transform-origin: left;
+}
+  
+.d90::before {
+    transform: rotate(90deg);
+}
+
+@keyframes spin {
+    0% {transform: translate(0px,300px) rotate(0deg);}
+    45% {transform: translate(500px,300px) rotate(360deg);}
+    50% {transform: translate(0px,0px) rotate(0deg);}
+    95% {transform: translate(500px,0px) rotate(-360deg);}
+    100% {transform: translate(0px,300px) rotate(0deg);}
+}
